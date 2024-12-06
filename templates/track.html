@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Détails de la Chanson</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>Détails de la Chanson "{{.Name}}"</h1>
+    <img src="{{(index .Album.Images 0).URL}}" alt="Couverture de l'album">
+    <p>Album : {{.Album.Name}}</p>
+    <p>Artiste : {{range .Artists}}
+        {{.Name}}
+        {{end}}
+    </p>
+    <p>Date de sortie : {{.Album.ReleaseDate}}</p>
+    <a href="{{.ExternalURLs.Spotify}}">Écouter sur Spotify</a>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des Albums</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>Liste des Albums de SCH</h1>
+    <ul>
+        {{range .Items}}
+        <li>
+            <img src="{{(index .Images 0).URL}}" alt="Couverture de l'album">
+            <h2>{{.Name}}</h2>
+            <p>Date de sortie : {{.ReleaseDate}}</p>
+            <p>Nombre de musiques : {{.TotalTracks}}</p>
+        </li>
+        {{end}}
+    </ul>
+</body>
+</html>
